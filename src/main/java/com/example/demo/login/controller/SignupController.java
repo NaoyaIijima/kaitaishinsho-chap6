@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.example.demo.login.domain.model.SignupForm;
+import com.example.demo.login.domain.model.GroupOrder;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,7 +54,7 @@ public class SignupController<ValidatedSignupForm> {
      * ユーザー登録画面のPOSTメソッド用処理.
      */
     @PostMapping("/signup")
-    public String postSignUp(@ModelAttribute @Validated SignupForm form, 
+    public String postSignUp(@ModelAttribute @Validated(GroupOrder.class) SignupForm form, 
                                 BindingResult bindingResult, Model model) {
                                     
         if(bindingResult.hasErrors()){
