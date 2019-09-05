@@ -56,7 +56,7 @@ public class SignupController {
                                 BindingResult bindingResult, Model model) {
                                     
         if(bindingResult.hasErrors()){
-            return getSingUp(form, model);
+            return getSignUp(form, model);
         }
         
         System.out.println(form);
